@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* שימוש בגריד ליצירת אתר רספונסיבי ומיקום איזורים מרכזיים */
+body{
+    min-height: 100vh;
+    display: grid;
+    border: 1px solid yellow; 
+    grid-template-areas: "h h h"
+                         "a a a"
+                         "f f f";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 60px 
+                        2fr
+                        60px;
+
+}
+/* הגדרת גריד לאיזורים מרכזיים */
+/* הגדרת צבע רקע לכותרת */
+header   { 
+    grid-area: h; 
+    background: linear-gradient(to right bottom,
+    rgb(255, 255, 255),
+    rgb(207, 97, 211));
+}
+/* הגדרת תמונת רקע  */
+main  { 
+    display: flex; 
+    justify-content: center;
+    grid-area: a; 
+    background: url(../img/andropic9.jpeg);
+    background-repeat: none;
+    background-size: cover;
+ }
+/* הגדרת רקע לפוטר */
+footer   {
+    grid-area: f;
+    background:linear-gradient(to right bottom,
+    rgb(255, 255, 255),
+    rgb(207, 97, 211));
+}
+/* מיקום כותרת */
+h2{
+    text-align: center;
+    color: white;
+}
+/* מיקום טופס כניסה למערכת */
+form{
+    margin-top: 5%;
+}
+/* מיקום הזן סיסמא */
+form p{
+    text-align: center;
+}
+/* מיקום כפתור כניסה למערכת */
+form button{
+    margin-right: 30%;
+        background:linear-gradient(to right bottom,
+    rgb(255, 255, 255),
+    rgb(207, 97, 211));
+}
+.containerwrongpassword button{
+      background:linear-gradient(to right bottom,
+    rgb(255, 255, 255),
+    rgb(207, 97, 211));
+}
+.containerwrongpassword{
+    width: 40vw;
+    text-align: center;
+    background: whitesmoke;
+}

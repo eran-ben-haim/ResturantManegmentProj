@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "m m m m n"
+    "m m m m n"
+    "m m m m n"
+    "m m m m n"
+    "f f f f n";
+  grid-template-columns: 1fr 1fr 3fr 3fr 5fr;
+  grid-template-rows:
+    1fr
+    1fr
+    1fr
+    1fr
+    0.5fr;
+}
+
+main {
+  grid-area: m;
+  border-left: 1px solid black;
+
+}
+/* טבלת פריטי המזמין  */
+.tableDetail {
+  width: 100%;
+  border-bottom: 1px solid;
+}
+.tableDetail table {
+  width: inherit;
+  border-collapse: collapse;
+  
+}
+.tableDetail tr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.tableDetail td {
+  padding: 5px;
+  vertical-align: middle;
+  border: 2px solid rgb(63, 62, 62);
+  flex-basis: 50%;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tableDetail input {
+  border-radius: 8px;
+  padding: 5px;
+}
+/* עיצב פירטי ההזמנה */
+.orderDetails {
+  width: 100%;
+}
+.orderDetails table {
+  width: inherit;
+  border-collapse: collapse;
+  text-align: center;
+}
+.orderDetails th {
+  vertical-align: middle;
+  border: 1px solid gray;
+  height: 10px;
+}
+/* קונטיינר קטגוריות */
+nav {
+  grid-area: n;
+}
+nav p {
+  text-align: center;
+}
+.categories {
+  max-width: 400px;
+  width: 100%; 
+  margin: 10px 20px;
+}
+.categories button {
+  max-width: 100%;
+  padding: 25px;
+}
+.showDish{
+  display:none;
+}
+/*קונטטיינר תחתי הדף  */
+footer {
+  grid-area: f;
+  border-left: 1px solid black;
+  background-color: gray;
+  display: flex;
+}
+/* כפתורי תחתית הדף  */
+footer button {
+  margin: 0px 1px;
+  flex: 1;
+  min-height: 100%;
+  display: inline;
+}

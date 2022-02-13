@@ -1,0 +1,576 @@
+/* עיצוה הסקרולר בצד של הדף */
+::-webkit-scrollbar{
+  width:.5em;
+  margin-block-end: 10px;
+  margin-bottom: 10px;
+}
+::-webkit-scrollbar-track{
+  background:white;
+}
+::-webkit-scrollbar-thumb{
+  background-color: hsl(120, 80%, 50%);
+  border: .1rem solid white;
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(120, 80%, 45%);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* עיצוב מסנה הדף  */
+body {
+  background-image: url(../img/50039315.jpg);
+  background-repeat: no-repeat;
+  background-position:center 110% ;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a a a"
+    "b b b"
+    "c c c";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:
+    1fr
+    5fr
+    1fr;
+}
+/* כותרת ראשית */
+header div {
+  align-items: center;
+}
+header {
+    background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(84, 182, 54),
+    rgb(255, 255, 255)
+  );
+  grid-area: a;
+}
+header h1 {
+  text-align: center;
+  margin-top: 1%;
+}
+/* חלוקת האזורים לחלקים */
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 6fr;
+  grid-area: b;
+  align-items: center;
+}
+main {
+  display: grid;
+  grid-template-rows: 0.25fr 0.875fr 0.875fr;
+  justify-content: center;
+  text-align: center;
+}
+/* מיקום כותרת של מאין */
+main h2 {
+  text-align: center;
+  grid-column: 1 / -1;
+}
+/* מיקום כותרת של כל סוג מוצר */
+main div h3{
+  position: sticky;
+  top:0;
+  background:white;
+}
+/* מיקום קונטיינר שמאכלס את סוגי המוצרים */
+main div {
+  width: 100%;
+  height: 100%;
+   overflow: auto;
+  max-height: 250px;
+}
+main div button{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: none;
+  background: none;
+}
+/* אייקון של המוצרים */
+main div button img:hover{
+  animation: icons-jumps 1s ease-out forwards infinite;
+}
+@keyframes icons-jumps{
+  0%{
+    transform: rotate(-10deg);
+  }
+  25%{
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: rotate(-10deg);
+  }
+  75%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(-10deg);
+  }
+}
+main div button img:hover::after{
+  transform: rotate(0);
+}
+main div button {
+  float: right;
+  margin: 0.2rem;
+}
+.dosentHave{
+  background: radial-gradient(#e23535,white);
+  border-radius: 10%;
+}
+/* פופאפים */
+/* עדכון ידני או העברה לרשימת הזמנות  */
+.layoutUP{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.popUpProductToUpdata {
+  max-height: 400px;
+  max-width: 50%;
+  padding: 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: inset 0 0 15px 15px rgba(84, 231, 39, 0.7);
+  z-index: 2;
+  max-width: 400px;
+  border-radius: 10px;
+  display: none;
+}
+.updataProduct {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 10px;
+}
+/* כפתור האיקס */
+.updataProduct .closeForm{
+  border: none;
+  background: none;
+  align-self:flex-start;
+  transition: all 250ms ease;
+}
+.updataProduct .closeForm:hover{
+  background: #e23535;
+  border-radius: 10%;
+}
+/* כותרת */
+.updataProduct h5{
+  text-align: center;
+} 
+.tableProductToUpdata{
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+/* תוכן הפופ אפ */
+.tableProductToUpdata td input {
+  width: 20%;
+  border: none;
+  background: none;
+  color: black;
+}
+.tableProductToUpdata td th{
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+
+}
+.tableProductToUpdata td button{
+  border: none;
+  background: none;
+    border-radius: 10px;
+    transition: all 250ms ease;
+}
+.tableProductToUpdata td button:hover{
+    transform: scale(1.3);
+    color: rgba(84, 231, 39, 0.7);
+    }
+  /* האזור התחתון של הפופ אפ כניסה לעדכון מוצר */
+.tableForAddOrder{
+  width: 100%;
+  margin-right: 20%;
+}
+.listOfSuplliers{
+  width: 100%;
+   vertical-align: middle;
+}
+figcaption{
+  text-align: center;
+  width: 100%;
+}    
+.listOfSuplliers tr{
+  width: 100%;
+  vertical-align: middle;
+  align-items: center;
+}
+.listOfSuplliers tr td{
+   align-items: center;
+}
+.listOfSuplliers tr td input{
+  background: none;
+  border: none;
+  width: 30px;
+  margin-right: 48%;
+}
+.listOfSuplliers tr td button{
+  overflow: visible;
+  background: none;
+  border: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  margin-right: 25%;
+  transition: all 250ms ease;
+}
+.listOfSuplliers tr td button:hover{
+  transform: scale(1.3);
+  color: rgba(84, 231, 39, 0.7);
+}
+/* פופ אפ רשימת הזמנות לפני שנשלחות לספק וגם לבקאנד */
+.overlayListOrders{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.listOrdersPopUp {
+  min-height: 350px;
+  max-height: 400px;
+  max-width: 50%;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px black;
+  background-color: rgb(255, 255, 255);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(84, 231, 39, 0.7), 0 0 50px rgba(84, 231, 39, 0.7)  ;
+  width: 500px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+}
+.listOrders {
+  display: flex;
+  flex-direction: column;
+  min-height: 90%;
+}
+.listOrders .setOverflow{
+  flex: 1;
+  flex-basis: 300px;
+  overflow: auto;
+}
+.setOverflow table{
+  height: 100%;
+  width: 100%;
+}
+.closeListOrdersForm {
+  border: none;
+  padding: 5px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.493);
+}
+.closeListOrdersForm:hover {
+  color: black;
+  background-color: #e23535;
+  border-radius: 5px;
+}
+.listOrdersPopUp th {
+  border-bottom: 1px solid black;
+  padding: 0px 2px;
+}
+.ordersTable th{
+  position: sticky;
+  top: 0.01px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(84, 182, 54),
+    rgb(255, 255, 255)
+  );
+  color: white;
+  height: 3rem;
+  border-bottom: 1px solid #ddd;
+}
+.ordersTable tr{
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+.ordersTable tr td{
+vertical-align:center ;
+text-align: center;
+}
+.ordersTable tr td input{
+  width: 10%;
+  border:none;
+}
+.ordersTable tr td button{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: none;
+  transition: all 250ms ease;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.ordersTable tr td button:hover{
+color: rgba(84, 231, 39, 0.7);
+transform: scale(1.3);
+}
+.sentOrders{
+  width: 12%;
+  align-self: flex-end;
+  border: none;
+  background: none;
+  transition: all 250ms ease;
+}
+.sentOrders:hover{
+  color: rgba(84, 231, 39, 0.7);
+  transform: scale(1.3);
+}
+/* פופ אפ אישור סחורה שהגיעה  */
+.popUpForApproveOrders {
+  min-height: 350px;
+  max-height: 400px;
+  max-width: 50%;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px black;
+  background-color: rgb(255, 255, 255);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(84, 231, 39, 0.7), 0 0 50px rgba(84, 231, 39, 0.7)  ;
+  width: 500px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+   overflow: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.closeApproveOrderForm {
+  border: none;
+  padding: 5px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.493);
+}
+.closeApproveOrderForm:hover {
+  color: black;
+  background-color: #e23535;
+  border-radius: 5px;
+}
+.over {
+  overflow: auto;
+  max-height: 90%;
+  flex: 1;
+  margin: auto;
+  flex-basis: 300px;
+}
+.tableOfordersForApprove {
+  margin-bottom: 15px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableOfordersForApprove th {
+  position: sticky;
+  top: 0.01px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(84, 182, 54),
+    rgb(255, 255, 255)
+  );
+  color: white;
+  height: 3rem;
+  border-bottom: 1px solid #ddd;
+}
+.tableOfordersForApprove td {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  justify-content: center;
+}
+.tableOfordersForApprove button:hover {
+  color: rgba(84, 231, 39, 0.7);
+  transform: scale(1.2);
+}
+.tableOfordersForApprove button {
+   border: none;
+  background: none;
+  transition: all 250ms ease;
+  margin: auto;
+}
+.tableOfordersForApprove input {
+  width:15%;
+  border:none;
+  background: none;
+}
+/* פופ אפ ניהול מנות  */
+.overlayDish{
+   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.popUpDish{
+  min-height: 350px;
+  max-height: 400px;
+  max-width: 50%;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px black;
+  background-color: rgb(255, 255, 255);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(84, 231, 39, 0.7), 0 0 50px rgba(84, 231, 39, 0.7)  ;
+  width: 500px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.closeDishForm{
+  border: none;
+  background: none;
+  align-self: flex-start;
+  border-radius: 10%;
+  width: 4%;
+  transition: all ease 250ms;
+}
+.closeDishForm:hover{
+  background: #e23535;
+}
+.popUpDish h5{
+  align-self: center;
+}
+.containerForDishType1{
+  display: flex;
+  flex: 1 1 33%;
+  justify-content: space-between;
+}
+.containerForDishType1>*{
+  flex-basis: 33%;
+  border-radius: 10px;
+  background: none;
+  transition: all ease 250ms;
+}
+.containerForDishType1>*:hover{
+  background: rgba(84, 231, 39, 0.7);
+}
+.containerForDishType2{
+  display: flex;
+  flex: 1 1 50%;
+}
+.containerForDishType2>*{
+  flex-basis: 50%;
+  border-radius: 10px;
+  background: none;
+  transition: all ease 250ms;
+}
+.containerForDishType2>*:hover{
+  background: rgba(84, 231, 39, 0.7);
+}
+.showDishesContainer{
+  display: none;
+  flex-grow: 1;
+}
+.showDishes>*{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background: none;
+  margin: 5px;
+  float: right;
+  width: 15%;
+}
+.showDishes>*[available="2"]{
+  background:#e23535;
+  border-radius: 10%;
+}
+.showDishes>* img:hover{
+   animation: icons-jumps 1s ease-out forwards infinite;
+}
+.backToType{
+  display: none;
+  align-self: flex-end;
+  flex-basis: 10%;
+  background: none;
+  border:none ;
+  transition: all ease 250ms;
+}
+.backToType:hover{
+  color: rgba(84, 231, 39, 0.7);
+  transform: scale(1.3);
+}
+footer {
+  grid-area: c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer button {
+  margin: 0.8rem;
+  border: none;
+  background: none;
+  transition: all ease 250ms;
+}
+footer button:hover{
+  transform: scale(1.3);
+  color:rgba(84, 231, 39, 0.7);
+}
+footer a{
+  text-decoration: none;
+  color: black;
+  transition: all ease 250ms;
+}
+footer a:hover{
+  transform: scale(1.3);
+  color:rgba(84, 231, 39, 0.7);
+}

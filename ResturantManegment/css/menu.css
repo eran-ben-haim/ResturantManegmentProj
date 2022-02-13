@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+      display: flex;
+  flex-wrap: row warp;
+  justify-content: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+     flex-grow: 1;
+     min-width: 100%;
+     min-height: 100%;
+     align-items: center;
+}
+header,footer{
+    min-width: 100%;
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 100px;
+    border-bottom: 0.5px solid rgba(73, 69, 69, 0.651);
+    border-radius: 7px;
+      background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(82, 122, 201),
+    rgb(255, 255, 255)
+  );
+  color: white;
+}
+header h1 {
+  text-align: center;
+}
+main h2 {
+  text-align: center;
+  grid-column: 1 / -1;
+}
+.closeEditDishForm{
+    display: block;
+    float: right;
+}
+.popupForEditDish button{
+    display:block;
+}
+.popupForEditDish div button{
+    display:block;
+}
+.dishContain{
+    display: flex;
+    margin: auto;
+    margin-top: 5px;
+}
+.confirmProds{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+main div button {
+    text-align: center;
+    align-items: center;
+    border: none;
+    margin: auto;
+       background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(82, 122, 201),
+    rgb(255, 255, 255)
+  );
+  color: white;
+  grid-column: 1 / -1;
+  display: none;  
+}
+.approveForDeleteDish{
+    display: none;
+}
+.approveForDeleteDish button{
+    display: block;
+}
+.popupForEditDishWrap{
+       max-height: 400px;
+    max-width: 50%;
+    height:50%;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px black;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 0.10), 0 0 50px rgba(5, 5, 5, 0.5)  ;
+    width: 500px;
+    border-radius: 10px;
+    display: none;
+}
+.popupForEditDish{
+    display: none;
+}
+.popupForNewDish{
+    max-height: 400px;
+    max-width: 50%;
+    height:50%;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px black;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 0.10), 0 0 50px rgba(5, 5, 5, 0.5)  ;
+    width: 500px;
+    border-radius: 10px;
+    display: none;
+}
+.prodQuantityUpdateWrap{
+    display: none;
+}
+.addName{
+    display: flex;
+    margin:auto;
+}
+.popupForNewDish button{
+    display:block
+}
+.addprods{
+    display: none;
+    margin: auto;
+}
+.flexB{
+    justify-content: space-between;
+}
+.addprods h4{
+    align-items: center;
+}
+.addNewProdPopupWrap{
+    max-height: 400px;
+    max-width: 50%;
+    height:50%;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px black;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 0.10), 0 0 50px rgba(5, 5, 5, 0.5)  ;
+    width: 500px;
+    border-radius: 10px;
+    display:none
+}
+.addNewProduct button{
+    display: block;
+}
+.confirmAddProd{
+    display: none;
+}
+.confirmAddProd button{
+    display: block;
+}
+.closeProdAddForm{
+    display: block;
+    float:right;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer button {
+  margin: 0.2rem;
+}

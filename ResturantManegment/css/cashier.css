@@ -1,0 +1,130 @@
+*{box-sizing: border-box;
+padding: 0;
+margin: 0;}
+/* שימוש בגריד ליצירת אתר רספונסיבי תוך מיקום איזורים מרכזיים */
+body{
+    background-image: url(../img/images.jpg);
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "h h h h h a"
+                         "h h h h h a"
+                         "h h h h h a"
+                         "h h h h h a"
+                         "h h h h h a"
+                         "f f f f f a";
+grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1.2fr;
+grid-template-rows: 2fr 
+                    2fr
+                    2fr
+                    2fr
+                    2fr
+                    1.5fr
+}
+/* הגדרת גריד לאזורים מרכזים */
+main{
+    grid-area: h;
+    background-image: url(../img/Cute-Background-473x1024.jpg);
+    opacity: revert;
+    background-repeat: no-repeat;
+    background-size: auto 100% ;
+    background-position: center;
+}
+.side{
+    grid-area: a;
+}
+.bottom{
+    grid-area: f;
+}
+/* מיקום כפתורים בתחתית הדף */
+.bottom div{
+    width: 100%;
+    height: 100%;
+}
+/* מיקום כפתורים בצד ימין של הדף */
+.side div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+/* מיקום אזורי השולחנות במסעדה  */
+main{
+    min-height: 80vh;
+    display: grid;
+    grid-template-areas: "a c"
+                         "d b";
+                         
+}
+#outside{
+    grid-area: a;
+    align-items: baseline;
+}
+#inside{
+    grid-area: b;
+    align-items: baseline;
+}
+#pattio{
+    grid-area: c;
+    align-items: baseline;
+}
+#bar{
+    grid-area: d;
+    align-items: baseline;
+}
+/*  */
+h2{
+    text-align: center;
+    align-items: center;
+    color: black;
+}
+.side .nav-button{
+    display: inline;
+    height: 20%;
+    border: none;
+    background: linear-gradient(45deg,rgb(76, 183, 202),rgb(255,255,255),rgb(76, 183, 202));
+    font-family: "montserrat";
+    cursor: pointer;
+    color: black;
+    position: relative;
+    overflow: hidden;
+}
+.bottom .nav-button{
+    display: inline;
+       width: 20%;
+    background: linear-gradient(-30deg,rgb(76, 183, 202),rgb(255,255,255),rgb(76, 183, 202));
+    color: black;
+    border: none; 
+}
+.nav-button:hover{
+    background: radial-gradient(rgb(76, 183, 202),rgb(255,255,255)); 
+}
+.btn{
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+}
+i{
+    width:100%;
+}
+.btn-secondary:hover{
+    border-radius: 50%;
+    animation: hover-tabels 500ms ease-in-out forwards;
+}
+.btn-secondary{
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease;
+}
+@keyframes hover-tabels{
+    100%{
+         background: radial-gradient(rgb(221, 63, 161),rgb(255,255,255));
+    }
+}
+.fa-cloud-sun{
+    align-items: center;
+    display: inline;
+    color: black;
+}
+main div span button {
+    display:none;
+}
